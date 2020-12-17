@@ -5,7 +5,16 @@
       <hr>
       <app-servers></app-servers>
       <app-success-alert></app-success-alert>
-      <app-warning-alert ></app-warning-alert>
+      <app-warning-alert></app-warning-alert>
+      <p *ngFor="let btn of logButtonClick;let i = index"
+         [ngStyle]="{backgroundColor: i >= 4? 'blue': ''}"
+         [ngClass]="{whitefont: i >= 4}"
+      >Button index {{btn}}</p>
+      <p *ngIf="showParagraph"
+      >Secret password: yasosubibu</p>
+      <button
+        class="btn btn-primary"
+        (click)="onClickSecretPassBtn()">Show/Hide password</button>
     </div>
   </div>
 </div>
